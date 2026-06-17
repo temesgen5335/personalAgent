@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+.envdir/
+*.session            # Telethon user-account sessions
+*.session-journal
+secrets/
+
+# Local data store
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+data/
+
+# Generated application assets (CV variants, cover letters)
+artifacts/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
