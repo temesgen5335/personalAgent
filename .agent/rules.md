@@ -35,3 +35,5 @@ These are hard constraints. Treat them like the architecture rules they are.
 ## Process
 - **R10 — Never `git commit` without explicit user approval.** Surface the draft
   message and changed files; wait.
+- **R11 — No `Co-Authored-By` trailer in commits.** Commit messages must not include
+  any `Co-Authored-By:` line (including the Claude trailer).

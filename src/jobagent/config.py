@@ -25,9 +25,18 @@ class Settings(BaseSettings):
     telegram_api_id: int | None = Field(None, alias="TELEGRAM_API_ID")
     telegram_api_hash: str = Field("", alias="TELEGRAM_API_HASH")
     telegram_phone: str = Field("", alias="TELEGRAM_PHONE")
+    telegram_channels: str = Field("", alias="TELEGRAM_CHANNELS")  # comma-separated
+    telegram_session: str = Field("data/telegram", alias="TELEGRAM_SESSION")
+    telegram_fetch_limit: int = Field(50, alias="TELEGRAM_FETCH_LIMIT")
     # Telegram — bot you talk to (Bot API)
     telegram_bot_token: str = Field("", alias="TELEGRAM_BOT_TOKEN")
     telegram_owner_id: int | None = Field(None, alias="TELEGRAM_OWNER_ID")
+
+    # ATS boards to watch — comma-separated company slugs per platform.
+    # e.g. GREENHOUSE_SLUGS=stripe,airbnb  LEVER_SLUGS=netflix  ASHBY_SLUGS=ramp
+    greenhouse_slugs: str = Field("", alias="GREENHOUSE_SLUGS")
+    lever_slugs: str = Field("", alias="LEVER_SLUGS")
+    ashby_slugs: str = Field("", alias="ASHBY_SLUGS")
 
     # Aggregator (Indeed/LinkedIn/Glassdoor/JobRight)
     serpapi_key: str = Field("", alias="SERPAPI_KEY")

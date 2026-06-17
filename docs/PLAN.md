@@ -22,11 +22,13 @@ Decisions locked in:
       (run `scripts/vps_setup.sh` on the box)
 
 ## Phase 1 — Ingestion adapters → store
-- [ ] Adapter run loop: fetch → dedup → upsert → log events
-- [ ] RemoteOK adapter (free JSON) — prove the pipeline end to end
-- [ ] Remotive adapter (free JSON)
-- [ ] Greenhouse / Lever / Ashby adapters (config-driven company slug list)
-- [ ] Telegram channel reader (Telethon, first-run login, session file)
+- [x] Adapter run loop: fetch → dedup → upsert → log events (`ingestion/runner.py`)
+- [x] RemoteOK adapter (free JSON) — pipeline proven live (100 jobs ingested)
+- [x] Remotive adapter (free JSON) — verified live (30 jobs)
+- [x] Greenhouse / Lever / Ashby adapters (config-driven slugs) — all verified live
+      (Stripe 512 / matchgroup 73 / Ramp 114)
+- [x] Telegram channel reader (Telethon, first-run login, session file) — parser
+      unit-tested; live run needs your api_id/api_hash + channels + `.[telegram]` extra
 - [ ] Aggregator adapter (SerpApi Google Jobs → Indeed/LinkedIn/Glassdoor/JobRight)
 - [ ] Playwright fallback adapter (last resort, per-board)
 - [ ] Wire fetch loop to Hermes cron
